@@ -42,7 +42,7 @@
 						  			</form>
 						  		</td>
 						  		<td>
-						  			<form method="post" action="<c:url value="formupdatearticle"/>">
+						  			<form>
 						  				<input name="idArticle" type="hidden" value="<c:out value="${ article.id }" />">
 						  				<button type="submit" class="btn btn-primary">o</button>
 						  			</form>					  		
