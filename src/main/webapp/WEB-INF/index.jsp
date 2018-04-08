@@ -55,7 +55,7 @@
         </div>
     </nav>
     
-    <c:if test="${ sessionScope.user.isAdmin == 1 }">
+    <c:if test="${ !empty sessionScope.user }">
 	    <div class="row">
 	    <!-- Mes snakes -->
 	    <div class="col s12 offset-m1 m5 offset-l2 l4">
