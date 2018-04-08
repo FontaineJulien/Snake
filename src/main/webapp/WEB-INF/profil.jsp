@@ -5,7 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>SnakeRPG</title>
+	<title>Mon profil</title>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -22,39 +22,20 @@
     <!-- Register -->
     <div class="card col s12 offset-m2 m8 offset-l3 l6">
             <div class="card-content">
-                <span class="card-title">Inscription</span>
-                <form method="post" action="<c:url value = "register"/>">
-					<div class="row">
+            	<span class="card-title">Mon profil</span>
+            	
+            		<div class="row">				
 					<div class="input-field col s12">
-						<i class="material-icons prefix">account_circle</i>
-						<input
-							type="text"
-							class="validate <c:out value="${ erreurs['username'] != NULL ? 'invalid' : '' }"/>"
-							name="username"
-							id="un"
-							value="<c:out value="${ user.username }" />"
-							>
-						<label
-							for="un"
-							data-error="<c:out value="${ erreurs['username'] }"/>"
-							>Username</label>
+						<p> Nom de compte : <c:out value="${ sessionScope.user.username }"/></p>
+						<p> Adresse email : <c:out value="${ sessionScope.user.email }"/></p>
 					</div>
-					
-					<div class="input-field col s12">
-						<i class="material-icons prefix">email</i>
-						<input
-							type="email"
-							class="validate <c:out value="${ erreurs['email'] != NULL ? 'invalid' : '' }"/>"
-							name="email"
-							id="em"
-							value="<c:out value="${ user.email }" />"
-							>
-						<label
-							for="em"
-							data-error="<c:out value="${ erreurs['email'] }"/>"
-							>Email</label>
 					</div>
-					
+            	
+            	
+            	
+                <span class="card-title">Changer mon mot de passe</span>
+                <form method="post" action="<c:url value = "changepassword"/>">
+					<div class="row">				
 					<div class="input-field col s12">
 						<i class="material-icons prefix">lock_open</i>
 						<input
@@ -82,7 +63,30 @@
 							data-error="<c:out value="${ erreurs['password'] }"/>"
 							>Confirm password</label>
 					</div>
-				  	<button type="submit" class="btn col offset-s2 s8">Register</button>
+				  	<button type="submit" class="btn col offset-s2 s8">Valider</button>
+
+				  	</div>
+			</form>
+			
+			
+			<span class="card-title">Changer mon adresse email</span>
+                <form method="post" action="<c:url value = "changeemail"/>">
+					<div class="row">				
+					<div class="input-field col s12">
+						<i class="material-icons prefix">email</i>
+						<input
+							type="password"
+							class="validate <c:out value="${ erreurs['email'] != NULL ? 'invalid' : '' }"/>"
+							name="password"
+							id="pwd"
+							>
+						<label
+							for="pwd"
+							data-error="<c:out value="${ erreurs['email'] }"/>"
+							>Entrez votre nouvelle adresse email</label>
+					</div>
+
+				  	<button type="submit" class="btn col offset-s2 s8">Valider</button>
 
 				  	</div>
 			</form>

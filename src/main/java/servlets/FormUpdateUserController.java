@@ -33,7 +33,7 @@ public class FormUpdateUserController extends HttpServlet {
 		this.userdao = ((DAOFactory)getServletContext().getAttribute(CONF_DAO_FACTORY)).getUserDAO();
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		Short id_player = Short.parseShort(request.getParameter(PARAM_ID_PLAYER));
 		

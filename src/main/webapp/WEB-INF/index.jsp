@@ -13,7 +13,6 @@
 	<link type="text/css" rel="stylesheet" href="style.css" />
 </head>
 <body class="grey lighten-4">
-<a href="<c:url value = "usermanagement"/>">Gestion des utilisateurs</a>
     <nav>
         <div class="nav-wrapper">
             <a href="<c:url value = "index"/>" class="brand-logo center">Snake RPG</a>
@@ -25,6 +24,9 @@
 				    	<li><a href="<c:url value = "register"/>">Inscription</a></li>
 				    </c:when>
 				    <c:otherwise>
+				    	<c:if test="${ sessionScope.user.isAdmin == 1 }">
+				    		<li><a href="<c:url value = "usermanagement"/>">Administration</a></li>
+				    	</c:if>
 	                    <li><a href="<c:url value = "profil"/>"><c:out value="${ user.username }" /></a></li>
 	                    <li><a href="<c:url value = "formcreatearticle"/>">Mes Articles</a></li>
                 		<li><a href="<c:url value = "snakes"/>">Snakes</a></li>
@@ -53,31 +55,35 @@
         </div>
     </nav>
     
-    <div class="row">
-    <!-- Mes snakes -->
-    <div class="col s12 offset-m1 m5 offset-l2 l4">
-        <div class="card">                
-            <div class="card-content">
-                <a class="card-title">Mes snakes</a>
-                <p>
-                    Vous pouvez consulter ici l'avancée de vos personnages et améliorer leurs compétences.
-                </p>
-            </div>                
-        </div>
-    </div>        
-    
-    <!-- Profil -->
-    <div class="col s12 m5 l4">
-        <div class="card">                
-            <div class="card-content">
-                <a class="card-title">Mon profil</a>
-                <p>
-                    Vous pouvez consulter ici votre niveau et vos statistiques.
-                </p>
-            </div>                
-        </div>
-    </div>
+    <c:if test="${ sessionScope.user.isAdmin == 1 }">
+	    <div class="row">
+	    <!-- Mes snakes -->
+	    <div class="col s12 offset-m1 m5 offset-l2 l4">
+	        <div class="card">                
+	            <div class="card-content">
+	                <a class="card-title">Mes snakes</a>
+	                <p>
+	                    Vous pouvez consulter ici l'avancée de vos personnages et améliorer leurs compétences.
+	                </p>
+	            </div>                
+	        </div>
+	    </div>        
+	    
+	    <!-- Profil -->
+	    <div class="col s12 m5 l4">
+	        <div class="card">                
+	            <div class="card-content">
+	                <a href="<c:url value = "profil"/>" class="card-title">Mon profil</a>
+	                <p>
+	                    Vous pouvez consulter ici votre niveau et vos statistiques.
+	                </p>
+	            </div>                
+	        </div>
+	    </div>
+   	</c:if>
+
     <c:forEach items="${listArticles}" var="article" >
+    <div class="row">
     <div class="col s8 offset-s2">
         <div class="card">                
             <div class="card-content">
@@ -87,6 +93,7 @@
                 </p>
             </div>                
         </div>
+    </div>
     </div>
     </c:forEach>
     

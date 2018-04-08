@@ -29,6 +29,13 @@
   	<servlet-name>RemoveArticle</servlet-name>
   	<servlet-class>servlets.RemoveArticle</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ProfilController</display-name>
+  	<servlet-name>ProfilController</servlet-name>
+  	<servlet-class>servlets.ProfilController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>IndexController</servlet-name>
   	<url-pattern>/index</url-pattern>
@@ -44,6 +51,10 @@
   <servlet-mapping>
   	<servlet-name>RemoveArticle</servlet-name>
   	<url-pattern>/RemoveArticle</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ProfilController</servlet-name>
+  	<url-pattern>/ProfilController</url-pattern>
   </servlet-mapping>
   <jsp-config>
     <jsp-property-group>
