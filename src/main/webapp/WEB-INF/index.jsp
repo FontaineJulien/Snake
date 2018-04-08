@@ -60,7 +60,7 @@
             <div class="card-content">
                 <a class="card-title">Mes snakes</a>
                 <p>
-                    Vous pouvez consulter ici l'avancé de vos personnages et améliorer leurs compétences.
+                    Vous pouvez consulter ici l'avancée de vos personnages et améliorer leurs compétences.
                 </p>
             </div>                
         </div>
