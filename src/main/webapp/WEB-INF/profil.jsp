@@ -75,13 +75,14 @@
 					<div class="input-field col s12">
 						<i class="material-icons prefix">email</i>
 						<input
-							type="password"
+							type="email"
 							class="validate <c:out value="${ erreurs['email'] != NULL ? 'invalid' : '' }"/>"
-							name="password"
-							id="pwd"
+							name="email"
+							id="em"
+							value="<c:out value="${ requestScope.wrong_user.email }"/>"
 							>
 						<label
-							for="pwd"
+							for="em"
 							data-error="<c:out value="${ erreurs['email'] }"/>"
 							>Entrez votre nouvelle adresse email</label>
 					</div>

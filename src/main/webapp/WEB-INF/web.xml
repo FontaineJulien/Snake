@@ -36,6 +36,20 @@
   	<servlet-name>ProfilController</servlet-name>
   	<servlet-class>servlets.ProfilController</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ChangePassword</display-name>
+  	<servlet-name>ChangePassword</servlet-name>
+  	<servlet-class>servlets.ChangePassword</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ChangeEmail</display-name>
+  	<servlet-name>ChangeEmail</servlet-name>
+  	<servlet-class>servlets.ChangeEmail</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>IndexController</servlet-name>
   	<url-pattern>/index</url-pattern>
@@ -55,6 +69,14 @@
   <servlet-mapping>
   	<servlet-name>ProfilController</servlet-name>
   	<url-pattern>/ProfilController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ChangePassword</servlet-name>
+  	<url-pattern>/ChangePassword</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ChangeEmail</servlet-name>
+  	<url-pattern>/ChangeEmail</url-pattern>
   </servlet-mapping>
   <jsp-config>
     <jsp-property-group>
